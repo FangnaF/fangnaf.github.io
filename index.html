@@ -1,9 +1,83 @@
-﻿<html>
-
-<head>      
-   
+<!doctype html>
+<html>
+<head>
+	
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+	
+<meta charset="utf-8">
+<title>bilibili_msg</title>
+	
+	
+<script>
+	$(document).ready(function(){
+		
+		$("#make_random").click(function(){
+			
+			
+			$("#text_random").empty();
+			
+			var isRepeat =$("#IsReapt").prop("checked");
+			
+			var min=$("#minOfRandom").val();
+			var max=$("#maxOfRandom").val();
+			var num=$("#numberOfRandom").val();
+			
+			var arr=new Array();
+			
+			for(var i=0;i<num;i++){
+				
+					var result=Math.floor((Math.random()*max)+parseInt(min));
+					
+					if(isRepeat){
+						arr.indexOf(result)
+						while(arr.indexOf(result) >-1){
+							
+						   result=Math.floor((Math.random()*max)+parseInt(min));
+							
+						   }
+						
+						
+						   $("#text_random").append(result+"<br>");
+							arr.push(result);
+						   
+				
+					}else{
+						$("#text_random").append(result+"<br>");
+						arr.push(result);
+					}
+					
+				
+				
+				}
+		});
+		
+	});
+	
+	
+	</script>
+	
+	<style>
+		.input_div{
+			
+			background-color: red;
+		}
+	
+	
+	</style>
 </head>
-<body>
-<h1>HelloWorld</h1>
 
-</body></html>
+
+<body>
+	随机数个数：<input id="numberOfRandom" type="number"/><br>
+	最小值：<input id="minOfRandom" type="number"/><br>
+	最大值：<input id="maxOfRandom" type="number"/><br>
+	
+	<input type="checkbox" id="IsReapt" />
+	<button id="make_random">生成随机数</button>
+	
+	<h1>生成随机数</h1>
+	<p id="text_random"></p>
+	
+</body>
+</html>
