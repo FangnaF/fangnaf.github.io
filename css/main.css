@@ -1,0 +1,30 @@
+.container{
+  margin: 0 auto;
+  background-color: #f7f7f7;
+}
+
+
+.create_place{
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: #FAEBD7;
+}
+
+#text_random{
+  font-size: 20px;
+  margin-top: 20px;
+
+
+}
+
+
+#make_random{
+  margin-top: 20px;
+
+}
+
+#introduction{
+  font-size: 5px;
+  margin-bottom: 2px;
+  color: 	#6C6C6C;
+}
