@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>浏览器跑分</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script type="text/javascript">
+    function beginTest(){
+      alert("跑分开始");
+      var b=1;
+      var pi =0;
+      var bt =(new Date()).valueOf();
+      for(var i=0;i<1000000000;i++){
+        if(i % 2 != 0){
+          pi -= 4/b;
+        }else{
+          pi += 4/b;
+        }
+        b+=2;
+      }
+      var et =(new Date()).valueOf();
+      var time =et -bt;
+      alert("跑分结果：\n"+"分数："+(10000000-time*200)+"\n\n计算结果："+pi+"\n所用时间："+time);
+      //alert(pi);
+
+      //alert(et-pt);
+    }
+  </script>
+</head>
+<body>
+<div class="container">
+  <img id="lds_img" src="img/lds.jpg" alt="">
+  <h1>浏览器跑分</h1>
+  <button type="button" name="button" onclick="beginTest()">开始跑分</button>
+</div>
+
+</body>
+</html>

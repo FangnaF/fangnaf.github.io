@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/metro.min.css">
+  <title>随机数生成</title>
+
+<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+
+</script>
+<script>
+$(document).ready(function(){
+
+
+  $("#make_random").click(function(){
+
+
+    $("#text_random").empty();
+
+    var isRepeat =$("#IsReapt").prop("checked");
+
+    var min=$("#minOfRandom").val();
+    var max=$("#maxOfRandom").val();
+    var num=$("#numberOfRandom").val();
+
+    var arr=new Array();
+    if(max != "" && min != "" && num !=""){
+    if(min<=max && num>=1){
+
+      for(var i=0;i<num;i++){
+
+        var result=Math.floor((Math.random()*max)+parseInt(min));
+
+        if(isRepeat){
+
+          if(num > (max-min +1)){
+            alert("不能生成比总数多");
+            break;
+
+          }
+
+          arr.indexOf(result)
+          while(arr.indexOf(result) >-1){
+
+             result=Math.floor((Math.random()*max)+parseInt(min));
+
+             }
+
+
+             $("#text_random").append(result+" ");
+            arr.push(result);
+
+
+        }else{
+          $("#text_random").append(result+" ");
+          arr.push(result);
+        }
+
+
+
+      }
+
+    }else{
+      alert("出现错误");
+    }
+
+      }else{
+
+        alert("请输入完整");
+      }
+
+  });
+
+});
+
+
+</script>
+
+<style>
+  #text_random{
+
+  },
+
+
+</style>
+</head>
+<body>
+
+
+<div class="container">
+  <h1>随机数生成</h1>
+  <p id="introduction">网址：metoday.win,by Fang</p>
+  随机数个数：<input id="numberOfRandom" type="number"/><br>
+  最小值：<input id="minOfRandom" type="number"/><br>
+  最大值：<input id="maxOfRandom" type="number"/><br>
+
+  是否唯一：<input type="checkbox" id="IsReapt" /><br>
+  <button id="make_random" class="command-button">生成</button>
+
+  <div class="create_place">
+    <h2>随机数生成区</h2>
+    <p id="text_random"></p>
+
+  </div>
+
+</div>
+
+
+</body>
+</html>
