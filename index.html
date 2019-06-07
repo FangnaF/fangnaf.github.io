@@ -5,13 +5,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="css/main.css">
+  <style type="text/css">
+
+
+    body {
+    margin: 0;
+}
+video{
+    position: fixed;//视频定位方式设为固定
+    right: 0;
+    top: 0;//视频位置
+    object-fit: cover;
+    min-width: 100%;
+    min-height: 100%; //不会因视频尺寸造成页面需要滚动
+    width: auto;
+    height: auto; //尺寸保持原视频大小
+    z-index: -100; //z轴定位，小于0即可
+    -webkit-filter: grayscale(20%);//添加灰度蒙版，如果设定为100%则视频显示为黑白
+}
+.unmute{
+  color: red;
+}
+
+.mute{
+  color: white;
+}
+
+.MainTitle{
+  position: fixed;
+  left:10%;
+
+  top: 55%;
+  font-family: "Verdana";
+  font-size: 100px;
+  color: white;
+  z-index:1;
+
+}
+.menu{
+  position: fixed;
+  right:10%;
+  top: 5%;
+  font-size: 30px;
+  color: white;
+  z-index:1;
+  list-style: none;
+
+}
+li{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 25px;
+}
+  </style>
+  <script type="text/javascript" src="http://www.w3school.com.cn/jquery/jquery.js"></script>
 </head>
+
 <body>
-<div class="container">
-  <a class="menu menu_1" href="../random_web/index.html">随机数生成</a>
-  <a class="menu menu_2" href="../run_run_web/index.html">浏览器跑分</a>
-  <a class="menu menu_3" href="https://space.bilibili.com/137489086">更多内容，敬请期待<br>bilbili@圆无边</a>
+  <div class="menu">
+    <ul>
+  <li id="rmake">随机数生成</li>
+  <li id="brun">浏览器跑分</li>
+  <li class="unmute">声音</li>
+    </ul>
 </div>
+  <div class="MainTitle">
+    欢迎关注
+    <br/>
+    &emsp;&emsp;
+    <font style ='font-size:50px '><a style ='color: white'href="https://space.bilibili.com/137489086"> bilibilb@圆无边</a></font>
+  </div>
+
+
+
+  <video muted="muted"  autoplay="autoplay" loop="loop"  src="./1.mp4" class="video-tvc" id="video-tvc">抱歉，您的浏览器不支持内嵌视频</video>
+
+
+
+
+  <script type="text/javascript">
+
+    var video = $('#video-tvc')[0];
+    $('.unmute').click(function() {
+        if ($(this).hasClass('mute')) {
+            video.muted = true;
+        }
+        else {
+            video.muted = false;
+        }
+        $(this).toggleClass('mute')
+    })
+
+    $('#brun').click(function() {
+      window.location.href="https://metoday.win/run_run_web/index.html";
+    })
+    $('#rmake').click(function() {
+      window.location.href="https://metoday.win/random_web/index.html";
+    })
+
+  </script>
+
 </body>
 </html>
