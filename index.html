@@ -12,16 +12,16 @@
     margin: 0;
 }
 video{
-    position: fixed;//视频定位方式设为固定
+    position: fixed;/* 视频定位方式设为固定*/
     right: 0;
-    top: 0;//视频位置
+    top: 0;/* 视频位置*/
     object-fit: cover;
     min-width: 100%;
-    min-height: 100%; //不会因视频尺寸造成页面需要滚动
+    min-height: 100%; /* 不会因视频尺寸造成页面需要滚动*/
     width: auto;
-    height: auto; //尺寸保持原视频大小
-    z-index: -100; //z轴定位，小于0即可
-    -webkit-filter: grayscale(20%);//添加灰度蒙版，如果设定为100%则视频显示为黑白
+    height: auto; /* 尺寸保持原视频大小*/
+    z-index: -100; /* z轴定位，小于0即可*/
+    -webkit-filter: grayscale(20%);/* 添加灰度蒙版，如果设定为100%则视频显示为黑白*/
 }
 .unmute{
   color: red;
