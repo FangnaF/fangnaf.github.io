@@ -21,7 +21,8 @@ video{
     width: auto;
     height: auto; /* 尺寸保持原视频大小*/
     z-index: -100; /* z轴定位，小于0即可*/
-    -webkit-filter: grayscale(20%);/* 添加灰度蒙版，如果设定为100%则视频显示为黑白*/
+    -webkit-filter: blur(5px); /* Chrome, Safari, Opera */
+    filter: blur(5px);
 }
 .unmute{
   color: red;
