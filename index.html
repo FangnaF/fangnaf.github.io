@@ -10,7 +10,9 @@
 
     body {
     margin: 0;
-}
+	overflow: hidden;
+	background-color:black;
+	}
 video{
     position: fixed;/* 视频定位方式设为固定*/
     right: 0;
@@ -35,7 +37,7 @@ video{
 .MainTitle{
   position: fixed;
   left:10%;
-
+  min-width:600px;
   top: 55%;
   font-family: "Verdana";
   font-size: 100px;
@@ -44,6 +46,7 @@ video{
 
 }
 .menu{
+min-width:500px;
   position: fixed;
   right:10%;
   top: 5%;
@@ -70,6 +73,7 @@ li{
   <li class="unmute">声音</li>
     </ul>
 </div>
+
   <div class="MainTitle">
     欢迎关注
     <br/>
